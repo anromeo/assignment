@@ -1,0 +1,26 @@
+<%= form_for(@assignment) do |x| %>
+	<%= if @assignment.errors.full_messages.each do|msg| %>
+		<p><%= msg %></p>
+		<% end %>
+	<% end %>
+	<table>
+		<tr>
+			<td><%= x.label :title, "Name" %></td>
+			<td><%= x.text_field :title, {:id=>"title"} %></td>
+		</tr>
+		<tr>
+			<td><%= x.label :date, "Date" %></td>
+			<td><%= x.date_field :date, {:id=>"date"} %></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="left"><%= x.label :description, "Description" %></td>
+		</tr>
+			<td colspan="2" align="left"><%= x.text_area :description, {:id=>"description"} %></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="right">
+				<%= x.submit "+ Assignment" %>
+			</td>
+		<tr>
+	</table>
+<% end %>

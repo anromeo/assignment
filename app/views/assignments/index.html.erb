@@ -1,0 +1,4 @@
+<%= link_to "+ Assignment", new_assignment_path %>
+<% @assignments.each do |assign| %>
+	<%= assign.title %>
+<% end %>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CalendarApp</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header>
+	<img src="https://www.codefellows.org/assets/CodeFellows-small-ff2a0932c27c0735f3344c0de4780693.png" id="headImg" />
+	<div>
+		<h1>Code Fellows Assignments</h1>
+	</div>
+</header>
+<div class="wrapper">
+	<% flash.each do |key, value| %>
+		<div class='flash' id='<%= key %>'>
+			<%= value %>
+		</div>
+	<% end %>
+<%= yield %>
+</div>
+</body>
+</html>
